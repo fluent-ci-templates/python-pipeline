@@ -30,7 +30,7 @@ export const test = async (client: Client, src = ".") => {
     case "poetry":
       ctr = ctr
         .withExec(["sh", "-c", "devbox run -- poetry install"])
-        .withExec(["sh", "-c", "devbox run -- python -m pytest"]);
+        .withExec(["sh", "-c", "devbox run -- poetry run pytest"]);
       break;
     case "pip":
       ctr = ctr
@@ -40,7 +40,7 @@ export const test = async (client: Client, src = ".") => {
     case "pipenv":
       ctr = ctr
         .withExec(["sh", "-c", "devbox run -- pipenv install --dev"])
-        .withExec(["sh", "-c", "devbox run -- python -m pytest"]);
+        .withExec(["sh", "-c", "devbox run -- pipenv run pytest"]);
       break;
     default:
       throw new Error(`Unknown package manager: ${packageManager}`);
