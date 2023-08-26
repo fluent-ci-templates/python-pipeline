@@ -8,6 +8,7 @@ emoji = "==2.1.0"
 grpcio = "*"
 
 [dev-packages]
+exceptiongroup = "*"
 pytest = "*"
 
 [requires]
