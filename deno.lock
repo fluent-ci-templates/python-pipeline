@@ -109,6 +109,7 @@
     "https://deno.land/x/fluent_gitlab_ci@v0.4.2/src/index.ts": "b5e374a24e3bca1d6fead0861f2c1b1e09e087a17e59297263f681ee71c972fe",
     "https://deno.land/x/fluent_gitlab_ci@v0.4.2/src/job.ts": "65a5be7f5816846919907aab00530044b571570a54a8a0bc967f4269a2ce99b7",
     "https://deno.land/x/nix_installer_pipeline@v0.3.6/src/dagger/steps.ts": "a34aea3753c7079de5877f592ce31f30d05d552155729ff3e695d77326405133",
+    "https://deno.land/x/nix_installer_pipeline@v0.4.1/src/dagger/steps.ts": "c33775203391e62279bdbbc85ab5b8aa920a321ea90daab48abbbff7d5725454",
     "https://deno.land/x/spinners@v1.1.2/mod.ts": "ed5b3562d4ea6c6887bc7e9844612b08a3bc3a3678ca77cc7dfdf461c362751e",
     "https://deno.land/x/spinners@v1.1.2/spinner-types.ts": "c67e6962a0c738aa57b4d3ad9fe06c8c0131f93360acbf95456f2ba200fd8826",
     "https://deno.land/x/spinners@v1.1.2/terminal-spinner.ts": "1cf0c38a423781734e2e538323c1992027830d741e90f0b81f532e5bc993d035",
