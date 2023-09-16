@@ -1,9 +1,11 @@
 import Client from "@fluentci.io/dagger";
-import { withDevbox } from "https://deno.land/x/nix_installer_pipeline@v0.4.1/src/dagger/steps.ts";
+import { withDevbox } from "https://nix.fluentci.io/v0.4.1/src/dagger/steps.ts";
 
 export enum Job {
   test = "test",
 }
+
+export const exclude = ["node_modules", ".git", ".fluentci", ".devbox"];
 
 export const test = async (client: Client, src = ".") => {
   const context = client.host().directory(src);
@@ -21,9 +23,7 @@ export const test = async (client: Client, src = ".") => {
   );
 
   let ctr = baseCtr
-    .withDirectory("/app", context, {
-      exclude: ["node_modules", ".git", ".fluentci", ".devbox"],
-    })
+    .withDirectory("/app", context, { exclude })
     .withWorkdir("/app");
 
   switch (packageManager) {
