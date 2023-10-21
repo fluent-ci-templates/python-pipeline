@@ -1,0 +1,14 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "poetry": {
+      "resolved": "github:NixOS/nixpkgs/f80ac848e3d6f0c12c52758c0f25c10c97ca3b62#poetry",
+      "source": "nixpkg"
+    },
+    "python3": {
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/f80ac848e3d6f0c12c52758c0f25c10c97ca3b62#python3",
+      "source": "nixpkg"
+    }
+  }
+}
