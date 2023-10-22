@@ -2,8 +2,5 @@
   "packages": [
     "python310",
     "pipenv"
-  ],
-  "shell": {
-    "init_hook": "pipenv shell"
-  }
+  ]
 }

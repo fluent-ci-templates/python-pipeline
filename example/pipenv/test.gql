@@ -1,0 +1,5 @@
+{
+  python {
+    test(src: ".", packageManager: "pipenv")
+  }
+}
