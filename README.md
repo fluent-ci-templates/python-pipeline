@@ -50,7 +50,7 @@ test(packageManager: String!, src: String!): String
 You can also use this pipeline programmatically:
 
 ```ts
-import { test } from "https://pkg.fluentci.io/python_pipeline@v0.4.0/mod.ts";
+import { test } from "https://pkg.fluentci.io/python_pipeline@v0.4.1/mod.ts";
 
 await test();
 ```
