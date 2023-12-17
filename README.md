@@ -42,15 +42,17 @@ dagger mod install github.com/fluent-ci-templates/python-pipeline@mod
 | ---------------- | ------------------------------------------------------| ------------- |
 |`PACKAGE_MANAGER` | The package manager to use (`poetry`, `pip`, `pipenv`) | `poetry`      |
 
-
 ## Jobs
 
 | Job       | Description              |
 | --------- | ------------------------ |
 | test      | Run tests (using pytest) |
 
-```graphql
-test(packageManager: String!, src: String!): String
+```typescript
+test(
+  src?: Directory | string,
+  packageManager?: string
+): Promise<string>
 ```
 
 ## Programmatic usage
