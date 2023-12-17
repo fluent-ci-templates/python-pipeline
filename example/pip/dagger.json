@@ -1,5 +1,4 @@
 {
-  "root": "",
   "name": "python",
-  "sdkRuntime": "tsiry/dagger-sdk-deno"
+  "sdk": "github.com/fluentci-io/daggerverse/deno-sdk@main"
 }

@@ -11,7 +11,7 @@ A ready-to-use Pipeline for your Python projects.
 Run the following command in your project:
 
 ```bash
-dagger run fluentci python_pipeline
+fluentci run python_pipeline
 ```
 
 Or, if you want to use it as a template:
@@ -25,7 +25,15 @@ This will create a `.fluentci` folder in your project.
 Now you can run the pipeline with:
 
 ```bash
-dagger run fluentci .
+fluentci run .
+```
+
+## Dagger Module
+
+Use as a [Dagger](https://dagger.io) module:
+
+```bash
+dagger mod install github.com/fluent-ci-templates/python-pipeline@mod
 ```
 
 ## Environment variables
@@ -50,7 +58,7 @@ test(packageManager: String!, src: String!): String
 You can also use this pipeline programmatically:
 
 ```ts
-import { test } from "https://pkg.fluentci.io/python_pipeline@v0.4.1/mod.ts";
+import { test } from "https://pkg.fluentci.io/python_pipeline@v0.5.0/mod.ts";
 
 await test();
 ```

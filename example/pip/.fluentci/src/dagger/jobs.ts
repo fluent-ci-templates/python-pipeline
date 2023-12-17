@@ -1,4 +1,6 @@
-import Client, { connect } from "../../deps.ts";
+import { Client, Directory } from "../../sdk/client.gen.ts";
+import { connect } from "../../sdk/connect.ts";
+import { getDirectory } from "./lib.ts";
 
 export enum Job {
   test = "test",
@@ -6,9 +8,20 @@ export enum Job {
 
 export const exclude = ["node_modules", ".git", ".fluentci", ".devbox"];
 
-export const test = async (src = ".", packageManager?: string) => {
+/**
+ * @function
+ * @description Run all tests (using pytest)
+ * @param {string | Directory} src
+ * @param {string} packageManager
+ * @returns {Promise<string>}
+ */
+export async function test(
+  src: Directory | string | undefined = ".",
+  packageManager?: string
+): Promise<string> {
+  let result = "";
   await connect(async (client: Client) => {
-    const context = client.host().directory(src);
+    const context = getDirectory(client, src);
     const pm = Deno.env.get("PACKAGE_MANAGER") || packageManager || "poetry";
 
     const baseCtr = client
@@ -48,15 +61,13 @@ export const test = async (src = ".", packageManager?: string) => {
         throw new Error(`Unknown package manager: ${pm}`);
     }
 
-    const result = await ctr.stdout();
-
-    console.log(result);
+    result = await ctr.stdout();
   });
-  return "Done";
-};
+  return result;
+}
 
 export type JobExec = (
-  src?: string,
+  src?: Directory | string,
   packageManager?: string
 ) => Promise<string>;
 

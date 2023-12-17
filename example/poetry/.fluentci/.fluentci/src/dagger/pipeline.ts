@@ -1,18 +1,19 @@
-import Client, { connect } from "@fluentci.io/dagger";
+import Client, { connect, uploadContext } from "../../deps.ts";
 import * as jobs from "./jobs.ts";
 
-const { fmt, lint, test, runnableJobs } = jobs;
+const { test, runnableJobs, exclude } = jobs;
 
-export default function pipeline(src = ".", args: string[] = []) {
+export default async function pipeline(src = ".", args: string[] = []) {
+  if (Deno.env.has("FLUENTCI_SESSION_ID")) {
+    await uploadContext(src, exclude);
+  }
   connect(async (client: Client) => {
     if (args.length > 0) {
       await runSpecificJobs(client, args as jobs.Job[]);
       return;
     }
 
-    await fmt(client, src);
-    await lint(client, src);
-    await test(client, src);
+    await test(client);
   });
 }
 
