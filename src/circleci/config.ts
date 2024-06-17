@@ -1,9 +1,9 @@
-import { CircleCI, Job } from "fluent_circleci";
+import { FluentCircleCI } from "../../deps.ts";
 
-export function generateYaml(): CircleCI {
-  const circleci = new CircleCI();
+export function generateYaml(): FluentCircleCI.CircleCI {
+  const circleci = new FluentCircleCI.CircleCI();
 
-  const tests = new Job()
+  const tests = new FluentCircleCI.Job()
     .machine({ image: "ubuntu-2004:2023.07.1" })
     .variables({
       PACKAGE_MANAGER: "poetry",

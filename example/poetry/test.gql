@@ -1,5 +1,0 @@
-{
-  python {
-    test(src: ".", packageManager: "poetry")
-  }
-}

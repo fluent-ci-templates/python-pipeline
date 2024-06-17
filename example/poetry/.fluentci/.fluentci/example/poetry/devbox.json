@@ -1,9 +1,0 @@
-{
-  "packages": [
-    "python3",
-    "poetry"
-  ],
-  "shell": {
-    "init_hook": "poetry shell"
-  }
-}
